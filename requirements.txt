@@ -1,0 +1,11 @@
+flask
+nltk
+spacy
+scikit-learn
+tensorflow
+torch
+transformers
+matplotlib
+plotly
+wordcloud
+requests
