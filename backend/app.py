@@ -43,26 +43,26 @@ import os
 # Load environment variables
 load_dotenv()
 
-# # Existing Imports
-# from backend.routes.predict import predict_bp
-# from backend.routes.summarization import summarize_bp
-# from backend.routes.sentiment import sentiment_bp
-# from backend.routes.chatbot import chatbot_bp
-# from backend.routes.credibility import credibility_bp
-# from backend.routes.explain import explain_bp
+# Existing Imports
+from backend.routes.predict import predict_bp
+from backend.routes.summarization import summarize_bp
+from backend.routes.sentiment import sentiment_bp
+from backend.routes.chatbot import chatbot_bp
+from backend.routes.credibility import credibility_bp
+from backend.routes.explain import explain_bp
 
-# # NEW: Import Document Intelligence Blueprint
-# from backend.routes.doc import doc_bp                     changes!!!!
+# NEW: Import Document Intelligence Blueprint
+from backend.routes.doc import doc_bp                    # changes!!!!
 
 
-# Remove the 'backend.' prefix from your imports
-from routes.predict import predict_bp
-from routes.summarization import summarize_bp
-from routes.sentiment import sentiment_bp
-from routes.chatbot import chatbot_bp
-from routes.credibility import credibility_bp
-from routes.explain import explain_bp
-from routes.doc import doc_bp
+# # Remove the 'backend.' prefix from your imports
+# from routes.predict import predict_bp
+# from routes.summarization import summarize_bp
+# from routes.sentiment import sentiment_bp
+# from routes.chatbot import chatbot_bp
+# from routes.credibility import credibility_bp
+# from routes.explain import explain_bp
+# from routes.doc import doc_bp
 
 
 app = Flask(__name__)
@@ -87,10 +87,11 @@ app.register_blueprint(doc_bp, url_prefix='/api')
 def home():
     return "TRUTHENGINE Backend is active"
 
-# if __name__ == "__main__":
-#     # Ensure environment variables are loaded for API keys
-#     app.run(host="127.0.0.1", port=5000, debug=True)        changes!!!!
 if __name__ == "__main__":
-    # Use the port Render gives you, or default to 5000
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    # Ensure environment variables are loaded for API keys
+    app.run(host="127.0.0.1", port=5000, debug=True)        #changes!!!!
+# if __name__ == "__main__":
+#     # Use the port Render gives you, or default to 5000
+#     port = int(os.environ.get("PORT", 5000))
+#     app.run(host="0.0.0.0", port=port)
+
