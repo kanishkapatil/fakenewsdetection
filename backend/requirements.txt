@@ -11,3 +11,4 @@ plotly
 wordcloud
 requests
 gunicorn
+python-dotenv
