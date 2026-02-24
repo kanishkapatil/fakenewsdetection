@@ -58,7 +58,7 @@ app = Flask(__name__)
 # It is often better to specify origins in production, 
 # but for dev, this stays as is:
 # CORS(app)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+CORS(app)
 
 # Register existing Blueprints
 app.register_blueprint(predict_bp)

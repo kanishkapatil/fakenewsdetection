@@ -1,11 +1,13 @@
 flask
+flask-cors
 nltk
 spacy
 scikit-learn
-tensorflow
+# tensorflow
 torch
 transformers
 matplotlib
 plotly
 wordcloud
 requests
+gunicorn
