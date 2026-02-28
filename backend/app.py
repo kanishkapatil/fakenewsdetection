@@ -50,25 +50,10 @@ from backend.routes.sentiment import sentiment_bp
 from backend.routes.chatbot import chatbot_bp
 from backend.routes.credibility import credibility_bp
 from backend.routes.explain import explain_bp
-
-# NEW: Import Document Intelligence Blueprint
-from backend.routes.doc import doc_bp                    # changes!!!!
-
-
-# # Remove the 'backend.' prefix from your imports
-# from routes.predict import predict_bp
-# from routes.summarization import summarize_bp
-# from routes.sentiment import sentiment_bp
-# from routes.chatbot import chatbot_bp
-# from routes.credibility import credibility_bp
-# from routes.explain import explain_bp
-# from routes.doc import doc_bp
-
+from backend.routes.doc import doc_bp                   
 
 app = Flask(__name__)
-# It is often better to specify origins in production, 
-# but for dev, this stays as is:
-# CORS(app)
+
 CORS(app)
 
 # Register existing Blueprints
@@ -79,8 +64,6 @@ app.register_blueprint(chatbot_bp)
 app.register_blueprint(credibility_bp)
 app.register_blueprint(explain_bp)
 
-# NEW: Register the Doc Intelligence Blueprint
-# Using a url_prefix helps keep your API organized: e.g., /api/doc-intel
 app.register_blueprint(doc_bp, url_prefix='/api')
 
 @app.route("/")
@@ -89,9 +72,6 @@ def home():
 
 if __name__ == "__main__":
     # Ensure environment variables are loaded for API keys
-    app.run(host="127.0.0.1", port=5000, debug=True)        #changes!!!!
-# if __name__ == "__main__":
-#     # Use the port Render gives you, or default to 5000
-#     port = int(os.environ.get("PORT", 5000))
-#     app.run(host="0.0.0.0", port=port)
-
+    app.run(host="127.0.0.1", port=5000, debug=True)   
+    
+    
